@@ -39,24 +39,7 @@ export const deleteProduct = (action) => {
         .catch((err) => console.log(err))
 }
 
-// put data
-
-// export const updateProduct = (action) => {
-
-//     const id=action.payload.id
-//     return axios.put(`${BASE_URL}${PUT_PRODUCT_API}${id}`,action.payload).then((res) => {
-//         const data = action.payload;
-//         const status = res.status;
-
-//         return {
-//             data, status
-//         };
-//     })
-//         .catch((err) => console.log(err))
-// }
-
 export const updateProduct = (action) => {
-    
     return axios.put(BASE_URL+PUT_PRODUCT_API+action.payload.id,action.payload).then((res) => {
         const data = action.payload;
         const status = res.status;
